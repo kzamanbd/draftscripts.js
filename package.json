@@ -1,6 +1,6 @@
 {
     "name": "dialog-plugin-vue",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "main": "dist/dialog-plugin-vue.umd.js",
     "module": "dist/dialog-plugin-vue.es.js",
     "files": [

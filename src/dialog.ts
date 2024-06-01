@@ -47,7 +47,7 @@ type DialogTypes = {
 
 const JerpDialog = defineComponent({
     name: 'JerpDialog',
-    setup() {
+    setup(props) {
         const visible = ref(false);
         const dialog = ref<DialogTypes>({
             type: 'success',
@@ -140,6 +140,7 @@ const JerpDialog = defineComponent({
         };
 
         return {
+            ...props,
             visible,
             dialog,
             openDialog,
@@ -227,8 +228,8 @@ const JerpDialog = defineComponent({
 });
 
 const DialogPlugin = {
-    install(app: App) {
-        const dialogInstance = createApp(JerpDialog);
+    install(app: App, options?: any) {
+        const dialogInstance = createApp(JerpDialog, options);
 
         const element = document.createElement('div');
         element.id = 'dialog-app';
@@ -236,6 +237,7 @@ const DialogPlugin = {
         const container: any = dialogInstance.mount(element);
         app.provide('openDialog', container.openDialog);
         app.config.globalProperties.$openDialog = container.openDialog;
+        app.config.globalProperties.$alert = container.openDialog;
     }
 };
 

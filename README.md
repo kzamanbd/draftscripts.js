@@ -1,45 +1,107 @@
-# dialog-plugin-vue
+# Dialog Plugin Vue
 
-This template should help get you started developing with Vue 3 in Vite.
+A customizable Vue.js dialog component library with support for success, error, warning, and confirmation dialogs.
 
-## Recommended IDE Setup
+## Features
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- Customizable dialog types: success, error, warning, and confirm.
+- Supports both options API and composition API.
+- Promise-based API for handling user responses.
+- Customizable CSS class names for styling flexibility.
+- Built with Vite for fast and modern development.
 
-## Type Support for `.vue` Imports in TS
+## Installation
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
+Install the plugin using npm:
 
 ```sh
-npm install
+npm install dialog-plugin-vue
 ```
 
-### Compile and Hot-Reload for Development
+Or using yarn:
 
 ```sh
-npm run dev
+yarn add dialog-plugin-vue
 ```
 
-### Type-Check, Compile and Minify for Production
+## Usage
 
-```sh
-npm run build
+### Register the Plugin
+
+In your main application file (e.g., main.js or main.ts), register the plugin:
+
+```js
+import { createApp } from 'vue';
+import App from './App.vue';
+import DialogPlugin from 'dialog-plugin-vue';
+import 'dialog-plugin-vue/dist/dialog-plugin-vue.css';
+
+const app = createApp(App);
+
+const options = {
+  // Custom options here
+};
+
+app.use(DialogPlugin, options);
+
+app.mount('#app');
+
 ```
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+### Options API Example
 
-```sh
-npm run test:unit
+To open a dialog using the Options API:
+
+```js
+export default {
+  methods: {
+    showDialog() {
+      this.$openDialog('Message', { type: 'success' });
+    },
+    showConfirmDialog() {
+      this.$openDialog('Message', { type: 'confirm' }).then((action) => {
+        if (action) {
+          console.log('Confirmed');
+        }
+      }).catch(() => {
+        console.log('Rejected');
+      });
+    }
+  }
+};
+
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+### Composition API Example
 
-```sh
-npm run lint
+To open a dialog using the Composition API:
+
+```js
+import { inject } from 'vue';
+
+export default {
+  setup() {
+    const openDialog = inject('openDialog');
+
+    const showDialog = () => {
+      openDialog('Message', { type: 'success' });
+    };
+
+    const showConfirmDialog = () => {
+      openDialog('Message', { type: 'confirm' }).then((action) => {
+        if (action) {
+          console.log('Confirmed');
+        }
+      }).catch(() => {
+        console.log('Rejected');
+      });
+    };
+
+    return {
+      showDialog,
+      showConfirmDialog
+    };
+  }
+};
+    
 ```
