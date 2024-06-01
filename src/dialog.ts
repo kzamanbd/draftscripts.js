@@ -10,9 +10,9 @@ import type { App } from 'vue';
 /**
  * BDialog component
  * @example
- * this.$alert('Message', { type: 'success' });
+ * this.$openDialog('Message', { type: 'success' });
  *? use promise to handle the response
- * this.$alert('Message', { type: 'confirm' }).then((action) => {
+ * this.$openDialog('Message', { type: 'confirm' }).then((action) => {
  *    if (action) {
  *       console.log('Confirmed');
  *   }
@@ -39,9 +39,6 @@ type DialogTypes = {
     confirmBtnText?: string;
     showCancelBtn?: boolean;
     allowOutsideClick?: boolean;
-    btnClass?: string;
-    icon?: string;
-    iconColor?: string;
     animationData?: any;
     message?: string;
     resolve?: (value: boolean) => void;
@@ -58,7 +55,6 @@ const JerpDialog = defineComponent({
             confirmBtnText: 'OK',
             showCancelBtn: false,
             allowOutsideClick: true,
-            iconColor: 'success',
             animationData: successAnimation
         });
 
@@ -85,15 +81,13 @@ const JerpDialog = defineComponent({
         const modifiedOptions = (options: DialogTypes) => {
             // Define common properties with default values
             const commonProps = {
-                title: 'Success',
-                type: 'success',
+                title: 'Info',
+                type: 'info',
                 confirmBtnText: 'OK',
                 showCancelBtn: false,
                 allowOutsideClick: true,
-                btnClass: '',
-                icon: '',
                 iconColor: 'success',
-                animationData: successAnimation
+                animationData: infoAnimation
             };
 
             // Create a map for specific properties based on type

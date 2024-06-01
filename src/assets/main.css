@@ -2,6 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    --blue: #026cd1;
+    --black: #000000;
+    --white: #ffffff;
+    --ice-white: #fbfcfe;
+    --bluish-white: #e2edfa;
+    --border-color: #e2edfa;
+    --red: #df2a43;
+    --redish-white: #f5bec6;
+    --yellow: #fcc428;
+    --yellowish-white: #fff7e3;
+    --green: #28a411;
+    --greenish-white: #d2fccc;
+}
+
 /* JerpDialog */
 .j-dialog-box {
     position: fixed;
