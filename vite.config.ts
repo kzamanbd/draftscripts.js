@@ -13,7 +13,7 @@ export default defineConfig({
     },
     build: {
         lib: {
-            entry: './src/main.ts',
+            entry: './src/index.ts',
             name: 'DialogPluginVue',
             fileName: (format) => `dialog-plugin-vue.${format}.js`
         },
