@@ -1,13 +1,13 @@
-# DraftScripts Vue Plugin
+# DraftScripts Node.js Library e.g. (Vue, React, Angular, Vanilla JS, etc.)
 
 A customizable Vue.js dialog component library with support for success, error, warning, and confirmation dialogs.
 
 [View Demo](https://draftscripts-vue.vercel.app/)
 
-[![NPM Version](https://img.shields.io/npm/v/draftscripts-vue)](https://www.npmjs.com/package/draftscripts-vue)
-[![Download](https://img.shields.io/npm/dm/draftscripts-vue)](https://www.npmjs.com/package/draftscripts-vue)
-[![Stars](https://img.shields.io/github/stars/kzamanbd/draftscripts-vue.svg?style=flat-square)](https://github.com/kzamanbd/draftscripts-vue/stargazers)
-[![LICENSE](https://img.shields.io/npm/l/draftscripts-vue)](https://github.com/kzamanbd/draftscripts-vue/blob/master/LICENSE)
+[![NPM Version](https://img.shields.io/npm/v/@draftscripts/vue)](https://www.npmjs.com/package/@draftscripts/vue)
+[![Download](https://img.shields.io/npm/dm/@draftscripts/vue)](https://www.npmjs.com/package/@draftscripts/vue)
+[![Stars](https://img.shields.io/github/stars/kzamanbd/node-draftscripts.svg?style=flat-square)](https://github.com/kzamanbd/node-draftscripts/stargazers)
+[![LICENSE](https://img.shields.io/npm/l/@draftscripts/vue)](https://github.com/kzamanbd/node-draftscripts/blob/master/LICENSE)
 
 ## Explore the documentation
 
