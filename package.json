@@ -1,23 +1,9 @@
 {
     "name": "dialog-plugin-vue",
-    "version": "1.0.10",
+    "version": "1.0.14",
     "main": "dist/dialog-plugin-vue.umd.js",
     "module": "dist/dialog-plugin-vue.es.js",
     "types": "dist/types/index.d.ts",
-    "exports": {
-        "./alert-dialog": "./src/components/AlertDialog.vue"
-    },
-    "publishConfig": {
-        "exports": {
-            "./*": {
-                "types": "./*/index.d.ts",
-                "import": "./*/index.mjs"
-            }
-        },
-        "directory": "dist",
-        "linkDirectory": false,
-        "access": "public"
-    },
     "files": [
         "dist"
     ],
