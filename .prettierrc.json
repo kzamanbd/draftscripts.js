@@ -4,7 +4,7 @@
     "tabWidth": 4,
     "singleQuote": true,
     "bracketSpacing": true,
-    "printWidth": 120,
+    "printWidth": 100,
     "trailingComma": "none",
     "vueIndentScriptAndStyle": true,
     "htmlWhitespaceSensitivity": "css",
