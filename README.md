@@ -2,12 +2,12 @@
 
 A customizable Vue.js dialog component library with support for success, error, warning, and confirmation dialogs.
 
-[View Demo](https://dialog-plugin-vue.vercel.app/)
+[View Demo](https://draftscripts-vue.vercel.app/)
 
-[![NPM Version](https://img.shields.io/npm/v/dialog-plugin-vue)](https://www.npmjs.com/package/dialog-plugin-vue)
-[![Download](https://img.shields.io/npm/dm/dialog-plugin-vue)](https://www.npmjs.com/package/dialog-plugin-vue)
-[![Stars](https://img.shields.io/github/stars/kzamanbd/dialog-plugin-vue.svg?style=flat-square)](https://github.com/kzamanbd/dialog-plugin-vue/stargazers)
-[![LICENSE](https://img.shields.io/npm/l/dialog-plugin-vue)](https://github.com/kzamanbd/dialog-plugin-vue/blob/master/LICENSE)
+[![NPM Version](https://img.shields.io/npm/v/draftscripts-vue)](https://www.npmjs.com/package/draftscripts-vue)
+[![Download](https://img.shields.io/npm/dm/draftscripts-vue)](https://www.npmjs.com/package/draftscripts-vue)
+[![Stars](https://img.shields.io/github/stars/kzamanbd/draftscripts-vue.svg?style=flat-square)](https://github.com/kzamanbd/draftscripts-vue/stargazers)
+[![LICENSE](https://img.shields.io/npm/l/draftscripts-vue)](https://github.com/kzamanbd/draftscripts-vue/blob/master/LICENSE)
 
 ## Explore the documentation
 
@@ -24,13 +24,13 @@ A customizable Vue.js dialog component library with support for success, error, 
 Install the plugin using npm:
 
 ```sh
-npm install dialog-plugin-vue
+npm install draftscripts-vue
 ```
 
 Or using yarn:
 
 ```sh
-yarn add dialog-plugin-vue
+yarn add draftscripts-vue
 ```
 
 ## Usage
@@ -42,8 +42,8 @@ In your main application file (e.g., main.js or main.ts), register the plugin:
 ```js
 import { createApp } from 'vue';
 import App from './App.vue';
-import DialogPlugin from 'dialog-plugin-vue';
-import 'dialog-plugin-vue/dist/dialog-plugin-vue.css';
+import DialogPlugin from 'draftscripts-vue';
+import 'draftscripts-vue/dist/draftscripts-vue.css';
 
 const app = createApp(App);
 

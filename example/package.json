@@ -1,5 +1,5 @@
 {
-    "name": "dialog-plugin-vue-example",
+    "name": "draftscripts-vue-playground",
     "version": "0.0.0",
     "private": true,
     "type": "module",
@@ -11,7 +11,7 @@
         "format": "prettier --write src/"
     },
     "dependencies": {
-        "dialog-plugin-vue": "^1.0.14",
+        "draftscripts-vue": "^1.0.14",
         "vue": "^3.4.21"
     },
     "devDependencies": {

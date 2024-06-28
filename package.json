@@ -1,8 +1,8 @@
 {
-    "name": "dialog-plugin-vue",
+    "name": "draftscripts-vue",
     "version": "1.0.14",
-    "main": "dist/dialog-plugin-vue.umd.js",
-    "module": "dist/dialog-plugin-vue.es.js",
+    "main": "dist/draftscripts-vue.umd.js",
+    "module": "dist/draftscripts-vue.es.js",
     "types": "dist/types/index.d.ts",
     "files": [
         "dist"
