@@ -1,13 +1,18 @@
 {
-    "name": "draftscripts-vue",
-    "version": "1.0.16",
-    "main": "dist/draftscripts-vue.umd.js",
-    "module": "dist/draftscripts-vue.es.js",
+    "name": "@draftscripts/vue",
+    "version": "1.0.0",
+    "main": "dist/draftscripts.umd.js",
+    "module": "dist/draftscripts.es.js",
     "types": "dist/types/index.d.ts",
     "files": [
+        "README.md",
         "dist"
     ],
     "type": "module",
+    "sideEffects": false,
+    "publishConfig": {
+        "access": "public"
+    },
     "scripts": {
         "dev": "vite",
         "build": "run-p type-check \"build-only {@}\" --",

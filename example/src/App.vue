@@ -31,7 +31,7 @@
 </template>
 
 <script setup>
-    import { TipTapEditor } from 'draftscripts-vue';
+    import { TipTapEditor } from '@draftscripts/vue';
     import { inject, ref } from 'vue';
     const openDialog = inject('openDialog');
 

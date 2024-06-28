@@ -16,7 +16,7 @@ export default defineConfig({
         lib: {
             entry: './src/plugins/index.ts',
             name: 'DraftScriptsVue',
-            fileName: (format) => `draftscripts-vue.${format}.js`
+            fileName: (format) => `draftscripts.${format}.js`
         },
         rollupOptions: {
             external: ['vue'],

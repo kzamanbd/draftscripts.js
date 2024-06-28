@@ -24,13 +24,13 @@ A customizable Vue.js dialog component library with support for success, error, 
 Install the plugin using npm:
 
 ```sh
-npm install draftscripts-vue
+npm install @draftscripts/vue
 ```
 
 Or using yarn:
 
 ```sh
-yarn add draftscripts-vue
+yarn add @draftscripts/vue
 ```
 
 ## Usage
@@ -42,7 +42,7 @@ In your main application file (e.g., main.js or main.ts), register the plugin:
 ```js
 import { createApp } from 'vue';
 import App from './App.vue';
-import { DialogPlugin } from 'draftscripts-vue';
+import { DialogPlugin } from '@draftscripts/vue';
 
 const app = createApp(App);
 
