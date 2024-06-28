@@ -1,8 +1,8 @@
 import type { App, Plugin } from 'vue';
-import Dialog from './dialog';
 
-import AlertDialog from './components/AlertDialog.vue';
-import TipTapEditor from './components/TipTapEditor.vue';
+import Dialog from './dialog';
+import AlertDialog from '@/components/AlertDialog.vue';
+import TipTapEditor from '@/components/TipTapEditor.vue';
 
 const DialogPlugin: Plugin = {
     install(app: App, options?: any) {

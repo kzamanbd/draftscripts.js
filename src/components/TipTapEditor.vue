@@ -7,15 +7,21 @@
     import TableRow from '@tiptap/extension-table-row';
     import Underline from '@tiptap/extension-underline';
     import Youtube from '@tiptap/extension-youtube';
+    import Document from '@tiptap/extension-document';
+    import Mention from '@tiptap/extension-mention';
+    import CharacterCount from '@tiptap/extension-character-count';
+    import Paragraph from '@tiptap/extension-paragraph';
+    import Text from '@tiptap/extension-text';
     import StarterKit from '@tiptap/starter-kit';
     import { EditorContent, useEditor } from '@tiptap/vue-3';
-    import { onBeforeUnmount, ref, watch } from 'vue';
+    import { computed, onBeforeUnmount, ref, watch } from 'vue';
 
     // @ts-ignore
     import TipTapButton from './TipTap/TipTapButton.vue';
     import TipTapDivider from './TipTap/TipTapDivider.vue';
 
-    import FileUpload from './TipTap/file-upload';
+    import fileUpload from './TipTap/file-upload';
+    import suggestion from './TipTap/suggestion';
 
     const props = defineProps({
         modelValue: {
@@ -37,6 +43,14 @@
         allowedFileTypes: {
             type: String,
             default: 'image/*'
+        },
+        isLimited: {
+            type: Boolean,
+            default: true
+        },
+        characters: {
+            type: Number,
+            default: 250
         }
     });
 
@@ -92,6 +106,18 @@
         extensions: [
             StarterKit,
             Underline,
+            Mention.configure({
+                HTMLAttributes: {
+                    class: 'mention'
+                },
+                suggestion
+            }),
+            Document,
+            Paragraph,
+            Text,
+            CharacterCount.configure({
+                limit: 250
+            }),
             Link.configure({
                 openOnClick: false
             }),
@@ -107,7 +133,7 @@
             TableRow,
             TableHeader,
             TableCell,
-            FileUpload.configure({
+            fileUpload.configure({
                 allowedFileTypes: props.allowedFileTypes,
                 maximumFileSize: 5,
                 onBeforeUpload: onBeforeUpload,
@@ -167,6 +193,13 @@
             height: 480
         });
     };
+    const limit = ref(props.characters);
+
+    const percentage = computed(() => {
+        return (
+            Math.round((100 / limit.value) * editor.value?.storage.characterCount.characters()) || 0
+        );
+    });
 </script>
 
 <template>
@@ -389,6 +422,7 @@
                 icon="ri-delete-bin-2-line"
                 @click.prevent="editor?.commands.deleteTable()" />
         </div>
+
         <editor-content v-show="!codeMode" :editor="editor" class="tiptap-editor" />
 
         <textarea
@@ -398,11 +432,79 @@
             class="tiptap-code-mode"
             @input="syncEditor">
         </textarea>
+        <div
+            v-if="editor && isLimited"
+            :class="{
+                'character-count': true,
+                'character-count--warning': editor.storage.characterCount.characters() === limit
+            }">
+            <svg height="20" width="20" viewBox="0 0 20 20">
+                <circle r="10" cx="10" cy="10" fill="#e9ecef" />
+                <circle
+                    r="5"
+                    cx="10"
+                    cy="10"
+                    fill="transparent"
+                    stroke="currentColor"
+                    stroke-width="10"
+                    :stroke-dasharray="`calc(${percentage} * 31.4 / 100) 31.4`"
+                    transform="rotate(-90) translate(-20)" />
+                <circle r="6" cx="10" cy="10" fill="white" />
+            </svg>
+
+            {{ editor.storage.characterCount.characters() }} / {{ limit }} characters
+        </div>
     </div>
 </template>
 
 <style>
     @import url('https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css');
+    :root {
+        --white: #fff;
+        --black: #2e2b29;
+        --black-contrast: #110f0e;
+        --gray-1: rgba(61, 37, 20, 0.05);
+        --gray-2: rgba(61, 37, 20, 0.08);
+        --gray-3: rgba(61, 37, 20, 0.12);
+        --gray-4: rgba(53, 38, 28, 0.3);
+        --gray-5: rgba(28, 25, 23, 0.6);
+        --green: #22c55e;
+        --purple: #6a00f5;
+        --purple-contrast: #5800cc;
+        --purple-light: rgba(88, 5, 255, 0.05);
+        --yellow-contrast: #facc15;
+        --yellow: rgba(250, 204, 21, 0.4);
+        --yellow-light: #fffae5;
+        --red: #ff5c33;
+        --red-light: #ffebe5;
+    }
+    button,
+    input,
+    select,
+    textarea {
+        background: var(--gray-2);
+        border-radius: 0.5rem;
+        border: none;
+        color: var(--black);
+        font-family: inherit;
+        font-size: 0.875rem;
+        font-weight: 500;
+        line-height: 1.15;
+        margin: none;
+        padding: 0.375rem 0.625rem;
+        transition: all 0.2s cubic-bezier(0.65, 0.05, 0.36, 1);
+    }
+    .character-count {
+        align-items: center;
+        color: var(--gray-5);
+        display: flex;
+        font-size: 0.75rem;
+        gap: 0.5rem;
+        margin: 0.5rem 0;
+    }
+    .character-count svg {
+        color: var(--purple);
+    }
     .tiptap-editor {
         overflow: auto;
         position: relative;
@@ -597,5 +699,13 @@
     .resize-cursor {
         cursor: ew-resize;
         cursor: col-resize;
+    }
+    .tiptap .mention {
+        background-color: rgba(88, 5, 255, 0.05);
+        border-radius: 0.4rem;
+        -webkit-box-decoration-break: clone;
+        box-decoration-break: clone;
+        color: #6a00f5;
+        padding: 0.1rem 0.3rem;
     }
 </style>

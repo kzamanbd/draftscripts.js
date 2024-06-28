@@ -14,7 +14,7 @@ export default defineConfig({
     },
     build: {
         lib: {
-            entry: './src/index.ts',
+            entry: './src/plugins/index.ts',
             name: 'DraftScriptsVue',
             fileName: (format) => `draftscripts-vue.${format}.js`
         },

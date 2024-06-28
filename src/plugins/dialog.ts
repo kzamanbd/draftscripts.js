@@ -27,7 +27,7 @@ import type { App } from 'vue';
  * });
  */
 
-import AlertDialog from './components/AlertDialog.vue';
+import AlertDialog from '@/components/AlertDialog.vue';
 
 const DialogPlugin = {
     install(app: App, options?: any) {
