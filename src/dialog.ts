@@ -27,7 +27,7 @@ import type { App } from 'vue';
  * });
  */
 
-import JerpDialog from './components/AlertDialog.vue';
+import JerpDialog from './components/AlertDialog';
 
 const DialogPlugin = {
     install(app: App, options?: any) {

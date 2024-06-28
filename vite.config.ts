@@ -16,7 +16,7 @@ export default defineConfig({
         lib: {
             entry: './src/index.ts',
             name: 'DialogPluginVue',
-            fileName: (format) => `dialog-plugin-vue.${format}.js`
+            formats: ['es', 'umd']
         },
         rollupOptions: {
             external: ['vue'],
