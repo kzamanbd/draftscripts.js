@@ -1,4 +1,4 @@
-# Dialog Plugin Vue
+# DraftScripts Vue Plugin
 
 A customizable Vue.js dialog component library with support for success, error, warning, and confirmation dialogs.
 
@@ -42,8 +42,7 @@ In your main application file (e.g., main.js or main.ts), register the plugin:
 ```js
 import { createApp } from 'vue';
 import App from './App.vue';
-import DialogPlugin from 'draftscripts-vue';
-import 'draftscripts-vue/dist/draftscripts-vue.css';
+import { DialogPlugin } from 'draftscripts-vue';
 
 const app = createApp(App);
 
@@ -113,11 +112,4 @@ export default {
   }
 };
     
-```
-
-## New Version released
-
-```sh
-git tag v1.0.5
-git push origin v1.0.5
 ```

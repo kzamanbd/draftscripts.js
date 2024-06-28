@@ -1,5 +1,5 @@
 <script setup lang="ts">
-    import { computed, defineExpose, ref } from 'vue';
+    import { computed, ref } from 'vue';
 
     interface DialogTypes {
         type: 'success' | 'error' | 'warning' | 'confirm';
