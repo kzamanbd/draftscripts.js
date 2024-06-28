@@ -27,11 +27,11 @@ import type { App } from 'vue';
  * });
  */
 
-import JerpDialog from './components/AlertDialog.vue';
+import AlertDialog from './components/AlertDialog.vue';
 
 const DialogPlugin = {
     install(app: App, options?: any) {
-        const dialogInstance = createApp(JerpDialog, options);
+        const dialogInstance = createApp(AlertDialog, options);
         const element = document.createElement('div');
         document.body.appendChild(element);
         const container: any = dialogInstance.mount(element);
