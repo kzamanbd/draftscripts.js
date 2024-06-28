@@ -11,6 +11,7 @@
     import Mention from '@tiptap/extension-mention';
     import CharacterCount from '@tiptap/extension-character-count';
     import Paragraph from '@tiptap/extension-paragraph';
+    import Placeholder from '@tiptap/extension-placeholder';
     import Text from '@tiptap/extension-text';
     import StarterKit from '@tiptap/starter-kit';
     import { EditorContent, useEditor } from '@tiptap/vue-3';
@@ -51,6 +52,10 @@
         characters: {
             type: Number,
             default: 250
+        },
+        placeholder: {
+            type: String,
+            default: 'Enter your text here'
         }
     });
 
@@ -112,11 +117,20 @@
                 },
                 suggestion
             }),
+            Text,
             Document,
             Paragraph,
-            Text,
             CharacterCount.configure({
                 limit: 250
+            }),
+            Placeholder.configure({
+                placeholder: ({ node }: any) => {
+                    if (node.type.name === 'heading') {
+                        return 'What’s the title?';
+                    }
+
+                    return props.placeholder;
+                }
             }),
             Link.configure({
                 openOnClick: false
@@ -504,6 +518,23 @@
     }
     .character-count svg {
         color: var(--purple);
+    }
+    /* Placeholder (at the top) */
+    p.is-editor-empty:first-child::before {
+        color: var(--gray-4);
+        content: attr(data-placeholder);
+        float: left;
+        height: 0;
+        pointer-events: none;
+    }
+
+    /* Placeholder (on every new line) */
+    .is-empty::before {
+        color: var(--gray-4);
+        content: attr(data-placeholder);
+        float: left;
+        height: 0;
+        pointer-events: none;
     }
     .tiptap-editor {
         overflow: auto;
