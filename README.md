@@ -2,6 +2,15 @@
 
 A customizable Vue.js dialog component library with support for success, error, warning, and confirmation dialogs.
 
+[View Demo](https://dialog-plugin-vue.vercel.app/)
+
+[![NPM Version](https://img.shields.io/npm/v/dialog-plugin-vue)](https://www.npmjs.com/package/dialog-plugin-vue)
+[![Download](https://img.shields.io/npm/dm/dialog-plugin-vue)](https://www.npmjs.com/package/dialog-plugin-vue)
+[![Stars](https://img.shields.io/github/stars/kzamanbd/dialog-plugin-vue.svg?style=flat-square)](https://github.com/kzamanbd/dialog-plugin-vue/stargazers)
+[![LICENSE](https://img.shields.io/npm/l/dialog-plugin-vue)](https://github.com/kzamanbd/dialog-plugin-vue/blob/main/LICENSE)
+
+## Explore the documentation
+
 ## Features
 
 - Customizable dialog types: success, error, warning, and confirm.
