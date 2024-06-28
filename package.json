@@ -1,8 +1,17 @@
 {
     "name": "dialog-plugin-vue",
-    "version": "1.0.7",
+    "version": "1.0.9",
     "main": "dist/dialog-plugin-vue.umd.js",
     "module": "dist/dialog-plugin-vue.es.js",
+    "types": "dist/types/index.d.ts",
+    "exports": {
+        ".": {
+            "import": "./dist/dialog-plugin-vue.es.js",
+            "require": "./dist/dialog-plugin-vue.umd.js"
+        },
+        "./AlertDialog": "./dist/AlertDialog.js",
+        "./LottieAnimation": "./dist/LottieAnimation.js"
+    },
     "files": [
         "dist"
     ],

@@ -1,8 +1,15 @@
 import type { App, Plugin } from 'vue';
-import DialogPlugin from './dialog';
+import Dialog from './dialog';
 
-export default {
+import AlertDialog from './components/AlertDialog.vue';
+
+const DialogPlugin: Plugin = {
     install(app: App, options?: any) {
-        app.use(DialogPlugin, options);
+        // Register components
+        app.component('AlertDialog', AlertDialog);
+
+        app.use(Dialog, options);
     }
-} as Plugin;
+};
+
+export { DialogPlugin, AlertDialog };

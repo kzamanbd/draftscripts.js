@@ -23,7 +23,8 @@ export default defineConfig({
             output: {
                 globals: {
                     vue: 'Vue'
-                }
+                },
+                exports: 'named' // This ensures Vite uses named exports
             }
         }
     }
