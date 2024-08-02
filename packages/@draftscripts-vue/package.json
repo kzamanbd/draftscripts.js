@@ -1,6 +1,6 @@
 {
     "name": "@draftscripts/vue",
-    "version": "1.0.0",
+    "version": "1.0.2",
     "main": "dist/draftscripts.umd.js",
     "module": "dist/draftscripts.es.js",
     "types": "dist/types/index.d.ts",
@@ -17,6 +17,7 @@
         "dev": "vite",
         "build": "run-p type-check \"build-only {@}\" --",
         "preview": "vite preview",
+        "publish": "npm publish --access public",
         "test:unit": "vitest",
         "build-only": "vite build",
         "type-check": "vue-tsc --build --force",

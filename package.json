@@ -8,6 +8,7 @@
     ],
     "scripts": {
         "build:vue": "npm run build --workspace packages/@draftscripts-vue",
+        "publish:vue": "npm run publish --workspace packages/@draftscripts-vue",
         "playground:dev": "npm run dev --workspace playground"
     },
     "keywords": [],
