@@ -1,0 +1,249 @@
+@import 'react-toastify/dist/ReactToastify.css';
+
+@tailwind base;
+@tailwind components;
+@layer components {
+    .page {
+        @apply z-[1] mx-auto w-full bg-white px-8 pb-10 pt-12 h-auto md:my-6 md:h-[297mm] md:w-[210mm] md:rounded md:border;
+        @apply relative break-before-auto print:mx-0 print:my-0 print:rounded-none print:shadow-none print:h-[297mm] print:w-[210mm];
+    }
+    .background {
+        @apply after:absolute after:inset-0 after:z-[-1] after:h-full after:w-full after:rotate-180 after:bg-[url(/background.svg)];
+    }
+    .orange-gradient {
+        @apply bg-gradient-to-r from-amber-500 via-orange-600 to-yellow-500 bg-clip-text text-transparent;
+    }
+    .green-gradient {
+        @apply bg-gradient-to-r from-green-400 to-green-500 bg-clip-text text-transparent;
+    }
+    .blue-gradient {
+        @apply bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent;
+    }
+    .resume-box {
+        @apply grid h-full grid-cols-10 gap-4;
+    }
+    .left-box {
+        @apply col-span-full md:col-span-3 print:col-span-3;
+    }
+    .right-box {
+        @apply text-justify col-span-full md:col-span-7 print:col-span-7;
+    }
+    .subtitle {
+        @apply blue-gradient relative mb-2 font-bold uppercase print:text-gray-700;
+    }
+    .timeline-icon {
+        @apply absolute -left-5 flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-r from-emerald-300 to-primary-300;
+    }
+    .section-box {
+        @apply flex h-10 items-center justify-center rounded-lg bg-primary-100;
+    }
+    .resume-link {
+        @apply text-sm text-primary-500 underline;
+    }
+    .bullet-list {
+        @apply ml-2 mt-2 space-y-1.5 text-xs;
+    }
+    .bullet {
+        @apply h-1.5 w-1.5 rounded-full bg-primary-500;
+    }
+    .key-button {
+        @apply relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-gray-900 rounded-full bg-gradient-to-br focus:ring-4 focus:outline-none;
+    }
+    .key-skill {
+        @apply rounded-full w-full relative px-2 py-1.5 transition-all ease-in duration-75 bg-white group-hover:bg-opacity-0;
+    }
+    .contact-icon {
+        @apply mr-3 rounded h-5 w-5;
+    }
+    .profile-photo {
+        @apply mx-auto rounded-full bg-gradient-to-r from-emerald-400 to-primary-400 object-cover;
+    }
+    .name--title {
+        @apply mb-10;
+    }
+    .resume-box.with-photo .name--title {
+        @apply mb-6 mt-4 text-center;
+    }
+    .resume-box:not(.with-photo) .profile-photo {
+        @apply hidden;
+    }
+    /* extra buttons */
+    .action-button {
+        @apply absolute right-6 top-4 z-50 flex cursor-pointer items-center space-x-2 text-sm print:hidden;
+    }
+    .action-btn {
+        @apply flex h-8 w-8 items-center justify-center border border-r-0;
+    }
+    .action-btn:first-child {
+        @apply rounded-l;
+    }
+    .action-btn:last-child {
+        @apply rounded-r border-r;
+    }
+    .portfolio {
+        @apply min-h-screen relative mx-auto px-6 sm:px-12 lg:max-w-[70rem] xl:max-w-[76rem] 2xl:max-w-[92rem] text-white;
+    }
+}
+@tailwind utilities;
+
+:root {
+    --foreground-rgb: rgb(211, 216, 232);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --foreground-rgb: 255, 255, 255;
+    }
+}
+
+body:has(.portfolio) {
+    color: rgb(var(--foreground-rgb));
+    background-color: #0d1224;
+}
+body {
+    @apply bg-[url('/images/mask.svg')] [mask-image:linear-gradient(0deg,#fff,rgba(255,255,255,1))] print:bg-white;
+}
+
+/* card style */
+
+.glow-container {
+    --spread: 60;
+}
+
+.glow-card {
+    --active: 0.15;
+    --start: 0;
+}
+
+.glow-card:is(:hover, :focus-visible) {
+    z-index: 2;
+}
+
+.glows {
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    filter: blur(calc(var(--blur) * 1px));
+}
+
+.glows::after,
+.glows::before {
+    --alpha: 0;
+    content: '';
+    background: conic-gradient(
+        from 180deg at 50% 70%,
+        #f626af 0deg,
+        #8228ec 72.0000010728836deg,
+        #f626af 144.0000021457672deg,
+        #0025ba 216.00000858306885deg,
+        #f626af 288.0000042915344deg,
+        #fafafa 1turn
+    );
+    background-attachment: fixed;
+    position: absolute;
+    inset: -5px;
+    border: 8px solid transparent;
+    border-radius: 12px;
+    mask: linear-gradient(#0000, #0000),
+        conic-gradient(
+            from calc((var(--start) - (var(--spread) * 0.5)) * 1deg),
+            #000 0deg,
+            #fff,
+            #0000 calc(var(--spread) * 1deg)
+        );
+    mask-composite: intersect;
+    mask-clip: padding-box, border-box;
+    opacity: var(--active);
+    transition: opacity 1s;
+}
+
+.glow-card::before {
+    position: absolute;
+    inset: 0;
+    border: 2px solid transparent;
+    content: '';
+    border-radius: 12px;
+    pointer-events: none;
+    background: #84738c;
+    background-attachment: fixed;
+    border-radius: 12px;
+    mask: linear-gradient(#0000, #0000),
+        conic-gradient(
+            from calc(((var(--start) + (var(--spread) * 0.25)) - (var(--spread) * 1.5)) * 1deg),
+            #ffffff26 0deg,
+            white,
+            #ffffff26 calc(var(--spread) * 2.5deg)
+        );
+    mask-clip: padding-box, border-box;
+    mask-composite: intersect;
+    opacity: var(--active);
+    transition: opacity 1s;
+}
+
+.glow-card::after {
+    --bg-size: 100%;
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    background: conic-gradient(
+        from 180deg at 50% 70%,
+        #f626af 0deg,
+        #8228ec 72.0000010728836deg,
+        #f626af 144.0000021457672deg,
+        #0025ba 216.00000858306885deg,
+        #f626af 288.0000042915344deg,
+        #fafafa 1turn
+    );
+    background-attachment: fixed;
+    border-radius: 12px;
+    opacity: var(--active, 0);
+    transition: opacity 1s;
+    --alpha: 0;
+    inset: 0;
+    border: 2px solid transparent;
+    mask: linear-gradient(#0000, #0000),
+        conic-gradient(
+            from calc(((var(--start) + (var(--spread) * 0.25)) - (var(--spread) * 0.5)) * 1deg),
+            #0000 0deg,
+            #fff,
+            #0000 calc(var(--spread) * 0.5deg)
+        );
+    filter: brightness(1.5);
+    mask-clip: padding-box, border-box;
+    mask-composite: intersect;
+}
+
+#sticky-card-1 {
+    --index: 1;
+}
+
+#sticky-card-2 {
+    --index: 2;
+}
+
+#sticky-card-3 {
+    --index: 3;
+}
+
+#sticky-card-4 {
+    --index: 4;
+}
+
+.sticky-card {
+    top: calc(var(--index) * 4rem);
+}
+.cursor-pointer-effect {
+    border-left: 0.1em solid #00ff41;
+    animation: blink 0.7s steps(1) infinite;
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+@page {
+    size: A4;
+    margin: 0;
+}
