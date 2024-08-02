@@ -537,18 +537,13 @@
         pointer-events: none;
     }
     .tiptap-editor {
+        margin: 0;
         overflow: auto;
         position: relative;
-        padding-top: 0.25rem;
-        padding-bottom: 0.25rem;
-        padding-left: 0.25rem;
-        padding-right: 0.25rem;
-        margin: 0;
+        padding: 0.25rem;
         border-bottom-right-radius: 0.375rem;
         border-bottom-left-radius: 0.375rem;
-        border-width: 1px;
-        border-style: solid;
-        border-color: var(--border-color);
+        border: 2px solid var(--border-color);
         font-size: 0.75rem;
         line-height: 1rem;
         letter-spacing: 0;
@@ -573,17 +568,14 @@
         line-height: 1.25rem;
     }
     .tiptap-editor-toolbar1 {
-        display: flex;
-        padding: 0.5rem;
-        margin-top: 0.25rem;
-        flex-wrap: wrap;
         flex: none;
+        display: flex;
+        flex-wrap: wrap;
         align-items: center;
+        padding: 0.5rem;
         border-top-left-radius: 0.375rem;
         border-top-right-radius: 0.375rem;
-        border-top-width: 1px;
-        border-style: solid;
-        border-color: var(--border-color);
+        border: 2px solid var(--border-color);
         font-size: 1.25rem;
         line-height: 1.75rem;
         letter-spacing: 0;
@@ -600,9 +592,7 @@
         flex-wrap: wrap;
         flex: none;
         align-items: center;
-        border-top-width: 1px;
-        border-style: solid;
-        border-color: var(--border-color);
+        border: 2px solid var(--border-color);
         font-size: 1.25rem;
         line-height: 1.75rem;
         letter-spacing: 0;
