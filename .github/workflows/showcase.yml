@@ -1,76 +1,58 @@
-# Sample workflow for building and deploying a Next.js site to GitHub Pages
-#
-# To get started with Next.js see: https://nextjs.org/docs/getting-started
-#
 name: Deploy Next.js site to Pages
 
 on:
-    # Runs on pushes targeting the default branch
     push:
         branches: ['master']
-
-    # Allows you to run this workflow manually from the Actions tab
     workflow_dispatch:
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
     contents: read
     pages: write
     id-token: write
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 concurrency:
     group: 'pages'
     cancel-in-progress: false
 
 jobs:
-    # Build job
     build:
         runs-on: ubuntu-latest
         steps:
-            - name: Checkout
+            - name: Checkout code
               uses: actions/checkout@v4
 
-            - name: Setup Node
+            - name: Set up Node.js
               uses: actions/setup-node@v4
               with:
                   node-version: '20'
-                  cache: 'pnpm'
 
-            - name: Setup pnpm
-              uses: pnpm/action-setup@v4
-              with:
-                  version: 8 # Specify the version of pnpm you want to use
+            - name: Install pnpm
+              run: npm install -g pnpm
 
-            - name: Setup Pages
-              uses: actions/configure-pages@v3
-              with:
-                  static_site_generator: next
+            - name: Install dependencies using pnpm
+              run: |
+                  pnpm install --frozen-lockfile --filter ./apps/showcase
 
-            - name: Install dependencies
-              run: cd apps/showcase && pnpm install
-
-            - name: Build with Next.js
-              run: cd apps/showcase && pnpm next build
+            - name: Build the project
+              run: |
+                  cd apps/showcase
+                  pnpm run build
 
             - name: Upload artifact
               uses: actions/upload-pages-artifact@v1
               with:
                   path: ./apps/showcase/out
 
-            - name: Push to another repository
+            - name: Push to GitHub Pages
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-                  TARGET_REPOSITORY: 'kzamanbd/kzamanbd.github.io' # Replace with your target repository
-                  TARGET_BRANCH: 'master' # Replace with your target branch
+                  TARGET_REPOSITORY: 'kzamanbd/kzamanbd.github.io'
+                  TARGET_BRANCH: 'master'
               run: |
-                  git config --global user.name "Kamruzzaman"
-                  git config --global user.email "kzamanbn@gmail.com"
                   cd apps/showcase/out
                   git init
-                  git remote add origin https://github.com/${{ env.TARGET_REPOSITORY }}.git
+                  git config --global user.name "Kamruzzaman"
+                  git config --global user.email "kzamanbn@gmail.com"
                   git add .
                   git commit -m "Deploy Next.js site" || false
-                  git branch -M ${{ env.TARGET_BRANCH }}
-                  git push -f origin ${{ env.TARGET_BRANCH }}
+                  git push --force "https://${{ github.actor_id }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ env.TARGET_REPOSITORY }}.git" HEAD:${{ env.TARGET_BRANCH }}
