@@ -39,23 +39,15 @@ jobs:
                   cd apps/showcase
                   pnpm run build
 
-            - name: Upload artifact
-              uses: actions/upload-pages-artifact@v1
-              with:
-                  path: ./apps/showcase/out
-
-            - name: Push to GitHub Pages
+            - name: Push to another repository
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-                  TARGET_REPOSITORY: 'kzamanbd/kzamanbd.github.io'
-                  TARGET_BRANCH: 'master'
               run: |
                   git config --global user.name "Kamruzzaman"
                   git config --global user.email "kzamanbn@gmail.com"
                   cd apps/showcase/out
                   git init
-                  git remote add origin https://github.com/${{ env.TARGET_REPOSITORY }}.git
                   git add .
-                  git commit -m "Deploy Next.js site" || false
-                  git branch -M ${{ env.TARGET_BRANCH }}
-                  git push -f origin ${{ env.TARGET_BRANCH }}
+                  git commit -m "Deploy Next.js site"
+                  git remote add origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/kzamanbd/kzamanbd.github.io.git
+                  git push --force origin HEAD:master
