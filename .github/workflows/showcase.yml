@@ -55,4 +55,5 @@ jobs:
                   git config --global user.email "kzamanbn@gmail.com"
                   git add .
                   git commit -m "Deploy Next.js site" || false
-                  git push --force "https://${{ github.actor_id }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ env.TARGET_REPOSITORY }}.git" HEAD:${{ env.TARGET_BRANCH }}
+                  git remote add origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/kzamanbd/kzamanbd.github.io.git
+                  git push --force origin HEAD:gh-pages
