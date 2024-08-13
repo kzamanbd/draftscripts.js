@@ -9,7 +9,7 @@
         "lint": "turbo lint",
         "format": "prettier --write \"**/*.{ts,tsx,md}\"",
         "showcase:dev": "turbo dev --filter=showcase",
-        "showcase:deploy": "turbo run build --filter=showcase --no-deps"
+        "showcase:deploy": "turbo run build --filter=showcase --includeDependencies --no-deps"
     },
     "keywords": [
         "react",
