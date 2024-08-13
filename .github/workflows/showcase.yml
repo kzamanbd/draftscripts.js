@@ -39,7 +39,7 @@ jobs:
                   cache: 'pnpm'
 
             - name: Setup pnpm
-              uses: pnpm/action-setup@v2.2.4
+              uses: pnpm/action-setup@v4
               with:
                   version: 8 # Specify the version of pnpm you want to use
 
@@ -47,15 +47,6 @@ jobs:
               uses: actions/configure-pages@v3
               with:
                   static_site_generator: next
-
-            - name: Restore cache
-              uses: actions/cache@v3
-              with:
-                  path: |
-                      apps/showcase/.next/cache
-                  key: ${{ runner.os }}-nextjs-${{ hashFiles('**/apps/showcase/pnpm-lock.yaml') }}-${{ hashFiles('**/apps/showcase/**.[jt]s', '**/apps/showcase/**.[jt]sx') }}
-                  restore-keys: |
-                      ${{ runner.os }}-nextjs-${{ hashFiles('**/apps/showcase/pnpm-lock.yaml') }}-
 
             - name: Install dependencies
               run: cd apps/showcase && pnpm install
