@@ -1,5 +1,5 @@
-import ActionButton from '@/app/components/Resume/ActionButton';
-import TimelineIcon from '@/app/components/Resume/TimelineIcon';
+import ActionButton from '@/components/Resume/ActionButton';
+import TimelineIcon from '@/components/Resume/TimelineIcon';
 import Image from 'next/image';
 
 export default function Resume() {
@@ -9,7 +9,13 @@ export default function Resume() {
 
             <div className="resume-box with-photo">
                 <div className="left-box">
-                    <Image src="/images/profile.png" className="profile-photo" width={150} height={150} alt="profile" />
+                    <Image
+                        src="/images/profile.png"
+                        className="profile-photo"
+                        width={150}
+                        height={150}
+                        alt="profile"
+                    />
                     <div className="name--title">
                         <h1 className="text-xl font-bold">KAMRUZZAMAN</h1>
                         <h5 className="subtitle capitalize">Software Engineer</h5>
@@ -156,16 +162,24 @@ export default function Resume() {
                     </div>
                     <section className="grid grid-cols-3 md:grid-cols-2 gap-2 print:grid-cols-2">
                         <button className="key-button group from-pink-500 to-orange-400 group-hover:from-pink-500 group-hover:to-orange-400 focus:ring-pink-200">
-                            <span className="key-skill bg-pink-50 text-pink-500 hover:text-white">PHP/Laravel</span>
+                            <span className="key-skill bg-pink-50 text-pink-500 hover:text-white">
+                                PHP/Laravel
+                            </span>
                         </button>
                         <button className="key-button group from-yellow-500 to-orange-400 group-hover:from-yellow-500 group-hover:to-orange-400 focus:ring-yellow-200">
-                            <span className="key-skill bg-yellow-50 text-yellow-500 hover:text-white">JavaScript</span>
+                            <span className="key-skill bg-yellow-50 text-yellow-500 hover:text-white">
+                                JavaScript
+                            </span>
                         </button>
                         <button className="key-button group from-teal-300 to-lime-300 group-hover:from-teal-300 group-hover:to-lime-300 focus:ring-lime-200">
-                            <span className="key-skill bg-teal-50 text-teal-500 hover:text-black">VueJS</span>
+                            <span className="key-skill bg-teal-50 text-teal-500 hover:text-black">
+                                VueJS
+                            </span>
                         </button>
                         <button className="key-button group from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white focus:ring-cyan-200">
-                            <span className="key-skill bg-cyan-50 text-cyan-500 hover:text-white">React</span>
+                            <span className="key-skill bg-cyan-50 text-cyan-500 hover:text-white">
+                                React
+                            </span>
                         </button>
                     </section>
                     {/* Training */}
@@ -192,10 +206,11 @@ export default function Resume() {
                     <h5 className="subtitle">Summary</h5>
 
                     <p className="mb-5 text-sm">
-                        Over three years of experience building web applications, updating existing web applications,
-                        and fixing bugs. I like to learn and use new technology in web development. I have worked
-                        extensively on various stages of application development by creating & implementing application
-                        architecture, which includes various stages in development, code signing, and releasing to
+                        Over three years of experience building web applications, updating existing
+                        web applications, and fixing bugs. I like to learn and use new technology in
+                        web development. I have worked extensively on various stages of application
+                        development by creating & implementing application architecture, which
+                        includes various stages in development, code signing, and releasing to
                         Market and collaborative environments for the web platform.
                     </p>
 
@@ -210,10 +225,16 @@ export default function Resume() {
                                 <div className="text-sm font-medium text-primary-800 flex space-x-1">
                                     <span>at</span>
                                     <div className="md:flex print:flex items-center space-x-1">
-                                        <a href="https://mononsoft.org" target="_blank" className="underline">
+                                        <a
+                                            href="https://mononsoft.org"
+                                            target="_blank"
+                                            className="underline">
                                             MononSoft Ltd.
                                         </a>
-                                        <a href="https://jmigroup-bd.com" target="_blank" className="underline">
+                                        <a
+                                            href="https://jmigroup-bd.com"
+                                            target="_blank"
+                                            className="underline">
                                             (A Sister Concern of JMI Group)
                                         </a>
                                     </div>
@@ -223,14 +244,19 @@ export default function Resume() {
                                 <time className="block text-sm font-normal leading-none text-gray-700">
                                     Jun 2021 - Present
                                 </time>
-                                <address className="text-xs">52 New Eskaton Road, Dhaka-1000.</address>
+                                <address className="text-xs">
+                                    52 New Eskaton Road, Dhaka-1000.
+                                </address>
                             </div>
                             <ul className="bullet-list">
                                 <li className="flex items-center">
                                     <div className="mr-4">
                                         <div className="bullet"></div>
                                     </div>
-                                    <p>Developing an ERP system based on Laravel, Vue.js and React.js.</p>
+                                    <p>
+                                        Developing an ERP system based on Laravel, Vue.js and
+                                        React.js.
+                                    </p>
                                 </li>
                                 <li className="flex items-center">
                                     <div className="mr-4">
@@ -242,7 +268,10 @@ export default function Resume() {
                                     <div className="mr-4">
                                         <div className="bullet"></div>
                                     </div>
-                                    <p>Creating and implementing the source code of new applications.</p>
+                                    <p>
+                                        Creating and implementing the source code of new
+                                        applications.
+                                    </p>
                                 </li>
                                 <li className="flex items-center">
                                     <div className="mr-4">
@@ -254,15 +283,18 @@ export default function Resume() {
                                     <div className="mr-4">
                                         <div className="bullet"></div>
                                     </div>
-                                    <p>Evaluating existing applications and performing updates and modifications.</p>
+                                    <p>
+                                        Evaluating existing applications and performing updates and
+                                        modifications.
+                                    </p>
                                 </li>
                                 <li className="flex items-center">
                                     <div className="mr-4">
                                         <div className="bullet"></div>
                                     </div>
                                     <p>
-                                        Developing technical handbooks to represent the design and code of new
-                                        applications.
+                                        Developing technical handbooks to represent the design and
+                                        code of new applications.
                                     </p>
                                 </li>
                             </ul>
@@ -282,35 +314,46 @@ export default function Resume() {
                                 <time className="block text-sm font-normal leading-none text-gray-700">
                                     May 2020 – Jun 2021
                                 </time>
-                                <address className="text-xs">27/2 Ram Babu Road, Mymensingh-2200</address>
+                                <address className="text-xs">
+                                    27/2 Ram Babu Road, Mymensingh-2200
+                                </address>
                             </div>
                             <ul className="bullet-list">
                                 <li className="flex items-center">
                                     <div className="mr-4">
                                         <div className="bullet"></div>
                                     </div>
-                                    <p>Developing web applications based on PHP frameworks - Laravel, Vue JS.</p>
-                                </li>
-                                <li className="flex items-center">
-                                    <div className="mr-4">
-                                        <div className="bullet"></div>
-                                    </div>
-                                    <p>Build efficient, testable & reusable codes. Modify existing code as needed.</p>
-                                </li>
-                                <li className="flex items-center">
-                                    <div className="mr-4">
-                                        <div className="bullet"></div>
-                                    </div>
                                     <p>
-                                        Executed and monitored standards for user interfaces page design and
-                                        development.
+                                        Developing web applications based on PHP frameworks -
+                                        Laravel, Vue JS.
                                     </p>
                                 </li>
                                 <li className="flex items-center">
                                     <div className="mr-4">
                                         <div className="bullet"></div>
                                     </div>
-                                    <p>Perform other operational tasks based on {`"as and when required"`}.</p>
+                                    <p>
+                                        Build efficient, testable & reusable codes. Modify existing
+                                        code as needed.
+                                    </p>
+                                </li>
+                                <li className="flex items-center">
+                                    <div className="mr-4">
+                                        <div className="bullet"></div>
+                                    </div>
+                                    <p>
+                                        Executed and monitored standards for user interfaces page
+                                        design and development.
+                                    </p>
+                                </li>
+                                <li className="flex items-center">
+                                    <div className="mr-4">
+                                        <div className="bullet"></div>
+                                    </div>
+                                    <p>
+                                        Perform other operational tasks based on{' '}
+                                        {`"as and when required"`}.
+                                    </p>
                                 </li>
                             </ul>
                         </li>
@@ -336,28 +379,37 @@ export default function Resume() {
                             <div className="mr-4">
                                 <div className="bullet"></div>
                             </div>
-                            <p>SQL, MySQL, TypeScript, Redux, Tailwind CSS, Bootstrap, Vuetify and Livewire.</p>
-                        </li>
-                        <li className="flex items-center">
-                            <div className="mr-4">
-                                <div className="bullet"></div>
-                            </div>
-                            <p>Experience with Software Development Life Cycle (SDLC) and Agile methodologies.</p>
-                        </li>
-                        <li className="flex items-center">
-                            <div className="mr-4">
-                                <div className="bullet"></div>
-                            </div>
                             <p>
-                                Experience in working with version control systems like Git, Bitbucket, GitLab, and
-                                GitHub.
+                                SQL, MySQL, TypeScript, Redux, Tailwind CSS, Bootstrap, Vuetify and
+                                Livewire.
                             </p>
                         </li>
                         <li className="flex items-center">
                             <div className="mr-4">
                                 <div className="bullet"></div>
                             </div>
-                            <p>Basic knowledge of Cloud Platforms like AWS, Microsoft Azure, Google Cloud Platform.</p>
+                            <p>
+                                Experience with Software Development Life Cycle (SDLC) and Agile
+                                methodologies.
+                            </p>
+                        </li>
+                        <li className="flex items-center">
+                            <div className="mr-4">
+                                <div className="bullet"></div>
+                            </div>
+                            <p>
+                                Experience in working with version control systems like Git,
+                                Bitbucket, GitLab, and GitHub.
+                            </p>
+                        </li>
+                        <li className="flex items-center">
+                            <div className="mr-4">
+                                <div className="bullet"></div>
+                            </div>
+                            <p>
+                                Basic knowledge of Cloud Platforms like AWS, Microsoft Azure, Google
+                                Cloud Platform.
+                            </p>
                         </li>
                         <li className="flex items-center">
                             <div className="mr-4">
@@ -370,20 +422,27 @@ export default function Resume() {
                                 <div className="bullet"></div>
                             </div>
                             <p>
-                                Familiarity with DevOps processes and tools (Docker), Linux or Other Unix-based systems.
+                                Familiarity with DevOps processes and tools (Docker), Linux or Other
+                                Unix-based systems.
                             </p>
                         </li>
                         <li className="flex items-center">
                             <div className="mr-4">
                                 <div className="bullet"></div>
                             </div>
-                            <p>Ability to work individually and independently with minimal supervision.</p>
+                            <p>
+                                Ability to work individually and independently with minimal
+                                supervision.
+                            </p>
                         </li>
                         <li className="flex items-center">
                             <div className="mr-4">
                                 <div className="bullet"></div>
                             </div>
-                            <p>Problem-solving skills, Self-managed, independent, initiative and proactive.</p>
+                            <p>
+                                Problem-solving skills, Self-managed, independent, initiative and
+                                proactive.
+                            </p>
                         </li>
                     </ul>
                 </div>

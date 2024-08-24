@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import GlowCard from './components/GlowCard';
 
 export const metadata = {
     title: 'DraftScripts - Features',
@@ -15,8 +14,8 @@ export default function Features() {
                         Designed for business teams like yours
                     </h2>
                     <p className="text-gray-500 sm:text-xl dark:text-gray-400">
-                        Here at DraftScripts we focus on markets where technology, innovation, and capital can unlock
-                        long-term value and drive economic growth.
+                        Here at DraftScripts we focus on markets where technology, innovation, and
+                        capital can unlock long-term value and drive economic growth.
                     </p>
                 </div>
                 <div className="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0">
@@ -35,8 +34,9 @@ export default function Features() {
                         </div>
                         <h3 className="mb-2 text-xl font-bold dark:text-white">Portfolio</h3>
                         <p className="text-gray-500 dark:text-gray-400">
-                            Plan it, create it, launch it. Collaborate seamlessly with all the organization and hit your
-                            marketing goals every month with our marketing plan.
+                            Plan it, create it, launch it. Collaborate seamlessly with all the
+                            organization and hit your marketing goals every month with our marketing
+                            plan.
                         </p>
                     </Link>
                     <Link href="/resume">
@@ -51,8 +51,8 @@ export default function Features() {
                         </div>
                         <h3 className="mb-2 text-xl font-bold dark:text-white">Resume</h3>
                         <p className="text-gray-500 dark:text-gray-400">
-                            Protect your organization, devices and stay compliant with our structured workflows and
-                            custom permissions made for you.
+                            Protect your organization, devices and stay compliant with our
+                            structured workflows and custom permissions made for you.
                         </p>
                     </Link>
                     <div>
@@ -69,10 +69,12 @@ export default function Features() {
                                 <path d="M2 13.692V16a2 2 0 002 2h12a2 2 0 002-2v-2.308A24.974 24.974 0 0110 15c-2.796 0-5.487-.46-8-1.308z"></path>
                             </svg>
                         </div>
-                        <h3 className="mb-2 text-xl font-bold dark:text-white">Business Automation</h3>
+                        <h3 className="mb-2 text-xl font-bold dark:text-white">
+                            Business Automation
+                        </h3>
                         <p className="text-gray-500 dark:text-gray-400">
-                            Auto-assign tasks, send Slack messages, and much more. Now power up with hundreds of new
-                            templates to help you get started.
+                            Auto-assign tasks, send Slack messages, and much more. Now power up with
+                            hundreds of new templates to help you get started.
                         </p>
                     </div>
                     <Link href="/checkout">
@@ -91,8 +93,8 @@ export default function Features() {
                         </div>
                         <h3 className="mb-2 text-xl font-bold dark:text-white">Payment</h3>
                         <p className="text-gray-500 dark:text-gray-400">
-                            Audit-proof software built for critical financial operations like month-end close and
-                            quarterly budgeting.
+                            Audit-proof software built for critical financial operations like
+                            month-end close and quarterly budgeting.
                         </p>
                     </Link>
                     <div>
@@ -105,10 +107,12 @@ export default function Features() {
                                 <path d="M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM2 11a2 2 0 012-2h12a2 2 0 012 2v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4z"></path>
                             </svg>
                         </div>
-                        <h3 className="mb-2 text-xl font-bold dark:text-white">Enterprise Design</h3>
+                        <h3 className="mb-2 text-xl font-bold dark:text-white">
+                            Enterprise Design
+                        </h3>
                         <p className="text-gray-500 dark:text-gray-400">
-                            Craft beautiful, delightful experiences for both marketing and product with real
-                            cross-company collaboration.
+                            Craft beautiful, delightful experiences for both marketing and product
+                            with real cross-company collaboration.
                         </p>
                     </div>
                     <div>
@@ -126,8 +130,8 @@ export default function Features() {
                         </div>
                         <h3 className="mb-2 text-xl font-bold dark:text-white">Operations</h3>
                         <p className="text-gray-500 dark:text-gray-400">
-                            Keep your company’s lights on with customizable, iterative, and structured workflows built
-                            for all efficient teams and individual.
+                            Keep your company’s lights on with customizable, iterative, and
+                            structured workflows built for all efficient teams and individual.
                         </p>
                     </div>
                 </div>
