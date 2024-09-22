@@ -8,7 +8,7 @@
         "dev": "turbo dev",
         "lint": "turbo lint",
         "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-        "showcase:dev": "turbo dev --filter=showcase",
+        "showcase": "turbo dev --filter=showcase",
         "showcase:build": "turbo build --filter=showcase"
     },
     "keywords": [
