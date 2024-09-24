@@ -10,24 +10,12 @@
     ],
     "author": "kamruzzaman",
     "license": "MIT",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/kzamanbd/draftscripts.js.git"
-    },
     "description": "A collection of scripts for DraftScripts projects",
-    "workspaces": [
-        "packages/*",
-        "playground"
-    ],
     "scripts": {
         "dev": "next dev --turbo",
         "build": "next build",
         "start": "next start",
-        "lint": "next lint",
-        "dev:vue": "npm run dev --workspace packages/@draftscripts-vue",
-        "build:vue": "npm run build --workspace packages/@draftscripts-vue",
-        "publish:vue": "npm run publish --workspace packages/@draftscripts-vue",
-        "playground:dev": "npm run dev --workspace playground"
+        "lint": "next lint"
     },
     "dependencies": {
         "@emailjs/browser": "^4.3.3",
