@@ -17,9 +17,18 @@ export async function GET(request: Request) {
     formData.append('currency', 'BDT');
     formData.append('tran_id', transactionId.toString());
     formData.append('total_amount', '500');
-    formData.append('success_url', `${process.env.NEXT_PUBLIC_BASE_URL}/api/payment/success?id=${transactionId}`);
-    formData.append('fail_url', `${process.env.NEXT_PUBLIC_BASE_URL}/api/payment/cancel?id=${transactionId}`);
-    formData.append('cancel_url', `${process.env.NEXT_PUBLIC_BASE_URL}/api/payment/cancel?id=${transactionId}`);
+    formData.append(
+        'success_url',
+        `${process.env.NEXT_PUBLIC_BASE_URL}/api/payment/success?id=${transactionId}`
+    );
+    formData.append(
+        'fail_url',
+        `${process.env.NEXT_PUBLIC_BASE_URL}/api/payment/cancel?id=${transactionId}`
+    );
+    formData.append(
+        'cancel_url',
+        `${process.env.NEXT_PUBLIC_BASE_URL}/api/payment/cancel?id=${transactionId}`
+    );
     formData.append('cus_name', 'Test Customer');
     formData.append('cus_email', 'test@gmail.com');
     formData.append('cus_add1', 'Dhaka');
